@@ -99,24 +99,22 @@ function App() {
           className='text-zinc-900'
         />
       </div>
-
-      <button onClick={() => createCalendarEvent()}>
-        Create Calendar Event
-      </button>
-
+      <CreateEventBtn onClick={() => createCalendarEvent()} />
       <div>
         {session ? (
           <>
             <h2>Hey there {session.user.email}</h2>
-            <button onClick={() => googleSignOut()}>Sign out</button>
+            <GoogleBtn
+              onClick={() => googleSignOut()}
+              textBtn='Sign Out'
+            />
           </>
         ) : (
-          <button onClick={() => googleSignIn()}>
-            Sign In with Google
-          </button>
+          <GoogleBtn
+            onClick={() => googleSignIn()}
+            textBtn='Continue with Google'
+          />
         )}
-        <GoogleBtn />
-        <CreateEventBtn />
       </div>
     </div>
   )

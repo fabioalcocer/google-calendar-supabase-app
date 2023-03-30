@@ -1,6 +1,14 @@
-function GoogleBtn() {
+type Props = {
+  onClick: () => void
+  textBtn: string
+}
+
+function GoogleBtn({ onClick, textBtn }: Props) {
   return (
-    <button className='flex justify-center py-3 px-7 text-sm text-center uppercase rounded-lg items-center gap-4 w-full max-w-[300px] bg-white text-zinc-900 hover:scale-[1.02] transition-all duration-300'>
+    <button
+      className='flex justify-center py-3 px-7 text-sm text-center uppercase rounded-lg items-center gap-4 w-full max-w-[300px] bg-white text-zinc-900 hover:scale-[1.02] transition-all duration-300'
+      onClick={onClick}
+    >
       <svg
         viewBox='0 0 256 262'
         className='max-w-[20px]'
@@ -24,7 +32,7 @@ function GoogleBtn() {
           fill='#EB4335'
         ></path>
       </svg>
-      <p className='font-bold'>Continue with Google</p>
+      <p className='font-bold'>{textBtn}</p>
     </button>
   )
 }
