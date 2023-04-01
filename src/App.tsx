@@ -7,6 +7,7 @@ import { useState } from 'react'
 import DateTimePicker from 'react-datetime-picker'
 import GoogleBtn from './components/GoogleBtn'
 import CreateEventBtn from './components/CreateEventBtn'
+import Loader from './components/Loader'
 
 function App() {
   const [start, setStart] = useState(new Date())
@@ -19,7 +20,7 @@ function App() {
   const { isLoading } = useSessionContext()
 
   if (isLoading) {
-    return <h2>Loading...</h2>
+    return <Loader />
   }
 
   const googleSignIn = async () => {
